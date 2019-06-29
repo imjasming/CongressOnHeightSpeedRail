@@ -78,11 +78,11 @@
      *     - `{ gradient: ['#3aeabb', '#fdd250'], gradientAngle: Math.PI / 4 }`
      *     - `{ gradient: ['red', 'green', 'blue'], gradientDirection: [x0, y0, x1, y1] }`
      *     - `{ gradient: [["red", .2], ["green", .3], ["blue", .8]] }`
-     *   - image:
-     *     - `{ image: 'http://i.imgur.com/pT0i89v.png' }`
-     *     - `{ image: imageObject }`
-     *     - `{ color: 'lime', image: 'http://i.imgur.com/pT0i89v.png' }` -
-     *       color displayed until the image is loaded
+     *   - img:
+     *     - `{ img: 'http://i.imgur.com/pT0i89v.png' }`
+     *     - `{ img: imageObject }`
+     *     - `{ color: 'lime', img: 'http://i.imgur.com/pT0i89v.png' }` -
+     *       color displayed until the img is loaded
      *
      * @default {gradient: ['#3aeabb', '#fdd250']}
      */
@@ -232,7 +232,7 @@
 
     /**
      * This method sets [this.arcFill]{@link CircleProgress#arcFill}.
-     * It could do this async (on image load).
+     * It could do this async (on img load).
      * @protected
      */
     initFill: function() {

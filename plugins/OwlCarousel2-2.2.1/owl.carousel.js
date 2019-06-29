@@ -454,7 +454,7 @@
 
 		if (this.settings.autoWidth && !this.is('pre-loading')) {
 			var imgs, nestedSelector, width;
-			imgs = this.$element.find('images');
+			imgs = this.$element.find('img');
 			nestedSelector = this.settings.nestedItemSelector ? '.' + this.settings.nestedItemSelector : undefined;
 			width = this.$element.children(nestedSelector).width();
 
@@ -1372,7 +1372,7 @@
 	};
 
 	/**
-	 * Preloads image with auto width.
+	 * Preloads img with auto width.
 	 * @todo Replace by a more generic approach
 	 * @protected
 	 */
@@ -1904,7 +1904,7 @@
 
 			this._core.trigger('load', { element: $element, url: url }, 'lazy');
 
-			if ($element.is('images')) {
+			if ($element.is('img')) {
 				$element.one('load.owl.lazy', $.proxy(function() {
 					$element.css('opacity', 1);
 					this._core.trigger('loaded', { element: $element, url: url }, 'lazy');
@@ -2215,7 +2215,7 @@
 			icon,
 			path,
 			dimensions = video.width && video.height ? 'style="width:' + video.width + 'px;height:' + video.height + 'px;"' : '',
-			customTn = target.find('images'),
+			customTn = target.find('img'),
 			srcType = 'src',
 			lazyClass = '',
 			settings = this._core.settings,
@@ -2225,7 +2225,7 @@
 				if (settings.lazyLoad) {
 					tnLink = '<div class="owl-video-tn ' + lazyClass + '" ' + srcType + '="' + path + '"></div>';
 				} else {
-					tnLink = '<div class="owl-video-tn" style="opacity:1;background-image:url(' + path + ')"></div>';
+					tnLink = '<div class="owl-video-tn" style="opacity:1;background-img:url(' + path + ')"></div>';
 				}
 				target.after(tnLink);
 				target.after(icon);
@@ -2247,7 +2247,7 @@
 		}
 
 		if (video.type === 'youtube') {
-			path = "//image.youtube.com/vi/" + video.id + "/hqdefault.jpg";
+			path = "//img.youtube.com/vi/" + video.id + "/hqdefault.jpg";
 			create(path);
 		} else if (video.type === 'vimeo') {
 			$.ajax({
